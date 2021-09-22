@@ -56,7 +56,7 @@ let playRound = function(playerSelection, computerSelection) {
             return "It's a tie! Both chose scissors";
         }
     } else {
-        return "Invalid choice! Please choose type 'Rock', 'Paper' or 'Scissors'";
+        return "Invalid choice! Please type 'Rock', 'Paper' or 'Scissors'";
     }
 }
 

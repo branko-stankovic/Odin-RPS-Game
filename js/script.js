@@ -1,8 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-let rounds = 5;
-
 // random choice generator for AI
 let computerPlay = function() {
     let moves = ["Rock", "Paper", "Scissors"];
@@ -63,8 +61,7 @@ let playRound = function(playerSelection, computerSelection) {
 // game machine
 let game = function() {
 
-    for (let i = 0; i < rounds; i++) {
-
+    while (playerScore < 5 && computerScore < 5) {
         // make computer choose again, then take input from player
         let computerSelection = computerPlay();
         let playerSelection = window.prompt("Rock, Paper or Scissors?");
@@ -74,7 +71,6 @@ let game = function() {
 
         console.log("player: " + playerScore);
         console.log("computer: " + computerScore);
-
     }
 
     // announce the winner!!! (and the fate of humanity)
@@ -82,8 +78,6 @@ let game = function() {
         return "Player wins!!! Go go humans!";
     } else if (computerScore > playerScore) {
         return "AI wins! Run for your lives!!!";
-    } else {
-        return "It's a tie! There is still hope for humanity.";
     }
 }
 

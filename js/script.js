@@ -58,11 +58,21 @@ let playRound = function(playerSelection, computerSelection) {
     }
 }
 
+let announceWinner = function() {
+    if (playerScore > computerScore) {
+        return "Player wins!!! Go go humans!";
+    } else if (computerScore > playerScore) {
+        return "AI wins! Run for your lives!!!";
+    }
+}
+
 // game machine
 let game = function() {
 
+    // first up to 5 wins
     while (playerScore < 5 && computerScore < 5) {
-        // make computer choose again, then take input from player
+
+        // each round computer and player make new choices
         let computerSelection = computerPlay();
         let playerSelection = window.prompt("Rock, Paper or Scissors?");
 
@@ -73,12 +83,7 @@ let game = function() {
         console.log("computer: " + computerScore);
     }
 
-    // announce the winner!!! (and the fate of humanity)
-    if (playerScore > computerScore) {
-        return "Player wins!!! Go go humans!";
-    } else if (computerScore > playerScore) {
-        return "AI wins! Run for your lives!!!";
-    }
+    announceWinner();
 }
 
 console.log(game());

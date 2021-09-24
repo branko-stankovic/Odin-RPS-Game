@@ -2,7 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 // random choice generator for AI
-let computerPlay = function() {
+const computerPlay = function() {
     let moves = ["Rock", "Paper", "Scissors"];
     let random = Math.floor(Math.random() * 3);
 
@@ -10,7 +10,7 @@ let computerPlay = function() {
 }
 
 // play a single round of rock paper scissors
-let playRound = function(playerSelection, computerSelection) {
+const playRound = function(playerSelection, computerSelection) {
 
     // convert both choices to lowercase
     playerSelection = playerSelection.toLowerCase();
@@ -34,7 +34,7 @@ let playRound = function(playerSelection, computerSelection) {
     }
 }
 
-let announceWinner = function() {
+const announceWinner = function() {
     if (playerScore > computerScore) {
         console.log("Player wins!!! Go go humans!");
     } else if (computerScore > playerScore) {
@@ -43,7 +43,7 @@ let announceWinner = function() {
 };
 
 // game machine
-let game = function() {
+const game = function() {
 
     // first up to 5 wins
     while (playerScore < 5 && computerScore < 5) {

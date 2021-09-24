@@ -58,7 +58,13 @@ let playRound = function(playerSelection, computerSelection) {
     }
 }
 
-
+let announceWinner = function() {
+    if (playerScore > computerScore) {
+        console.log("Player wins!!! Go go humans!");
+    } else if (computerScore > playerScore) {
+        console.log("AI wins! Run for your lives!!!");
+    }
+};
 
 // game machine
 let game = function() {
@@ -77,11 +83,7 @@ let game = function() {
         console.log("computer: " + computerScore);
     }
 
-    if (playerScore > computerScore) {
-        return "Player wins!!! Go go humans!";
-    } else if (computerScore > playerScore) {
-        return "AI wins! Run for your lives!!!";
-    }
+    announceWinner();
 }
 
 // let's play the game!

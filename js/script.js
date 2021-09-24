@@ -63,4 +63,4 @@ let game = function() {
 }
 
 // let's play the game!
-console.log(game());
+game();

@@ -13,46 +13,22 @@ let computerPlay = function() {
 let playRound = function(playerSelection, computerSelection) {
 
     // convert both choices to lowercase
-    let player = playerSelection.toLowerCase();
-    let computer = computerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
 
     // handle all the possible outcomes
-    if (player == "rock") {
-
-        // player chooses rock
-        if (computer == "rock") {
-            return "It's a tie! Both chose rock!";
-        } else if (computer == "paper") {
-            computerScore++;
-            return "Computer wins! Paper beats rock!";
-        } else if (computer == "scissors") {
-            playerScore++;
-            return "Player wins! Rock beats scissors!";
-        }
-    } else if (player == "paper") {
-
-        // player chooses paper
-        if (computer == "rock") {
-            playerScore++;
-            return "Player wins! Paper beats rock!";
-        } else if (computer == "paper") {
-            return "It's a tie! Both chose paper!";
-        } else if (computer == "scissors") {
-            computerScore++;
-            return "Computer wins! Scissors beats paper!";
-        }
-    } else if (player == "scissors") {
-
-        // player chooses scissors
-        if (computer == "rock") {
-            computerScore++;
-            return "Computer wins! Rock beats scissors!";
-        } else if (computer == "paper") {
-            playerScore++;
-            return "Player wins! Scissors beats paper!";
-        } else if (computer == "scissors") {
-            return "It's a tie! Both chose scissors";
-        }
+    if ((playerSelection == "rock" && computerSelection == "scissors") || 
+            (playerSelection == "paper" && computerSelection == "rock") || 
+            (playerSelection == "scissors" && computerSelection == "paper")) {
+        playerScore++;
+        return `Player wins! ${playerSelection} beats ${computerSelection}!`;
+    } else if ((playerSelection == "rock" && computerSelection == "paper") || 
+            (playerSelection == "paper" && computerSelection == "scissors") || 
+            (playerSelection == "scissors" && computerSelection == "rock")) {
+        computerScore++;
+        return `Computer wins! ${computerSelection} beats ${playerSelection}!`;
+    } else if (playerSelection == computerSelection) {
+        return `It's a tie! Both players chose ${playerSelection}`;
     } else {
         return "Invalid choice! Please type 'Rock', 'Paper' or 'Scissors'";
     }

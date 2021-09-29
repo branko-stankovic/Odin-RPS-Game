@@ -9,6 +9,9 @@ const computerPlay = function() {
     return moves[random];
 }
 
+const displayPlayerScore = document.querySelector('#displayPlayerScore');
+const displayComputerScore = document.querySelector('#displayComputerScore');
+
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
 
@@ -21,11 +24,13 @@ const playRound = function(playerSelection, computerSelection) {
             (playerSelection == "paper" && computerSelection == "rock") || 
             (playerSelection == "scissors" && computerSelection == "paper")) {
         playerScore++;
+        displayPlayerScore.textContent = playerScore;
         return `Player wins! ${playerSelection} beats ${computerSelection}!`;
     } else if ((playerSelection == "rock" && computerSelection == "paper") || 
             (playerSelection == "paper" && computerSelection == "scissors") || 
             (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore++;
+        displayComputerScore.textContent = computerScore;
         return `Computer wins! ${computerSelection} beats ${playerSelection}!`;
     } else if (playerSelection == computerSelection) {
         return `It's a tie! Both players chose ${playerSelection}`;

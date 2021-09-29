@@ -13,6 +13,7 @@ const displayPlayerScore = document.querySelector('#displayPlayerScore');
 const displayComputerScore = document.querySelector('#displayComputerScore');
 
 const displayRoundInfo = document.querySelector('#roundInfo');
+const displayGameInfo = document.querySelector('#gameInfo');
 
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
@@ -37,13 +38,17 @@ const playRound = function(playerSelection, computerSelection) {
     } else if (playerSelection == computerSelection) {
         displayRoundInfo.textContent = `It's a tie! Both players chose ${playerSelection}`;
     }
+
+    if (playerScore == 5 || computerScore == 5) {
+        announceWinner();
+    }
 }
 
 const announceWinner = function() {
     if (playerScore > computerScore) {
-        console.log("Player wins!!! Go go humans!");
+        displayGameInfo.textContent = "Player wins!!! Go go humans!";
     } else if (computerScore > playerScore) {
-        console.log("AI wins! Run for your lives!!!");
+        displayGameInfo.textContent = "AI wins! Run for your lives!!!";
     }
 };
 

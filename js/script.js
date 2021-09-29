@@ -45,21 +45,21 @@ const announceWinner = function() {
 // game machine
 const game = function() {
 
-    // first up to 5 wins
-    while (playerScore < 5 && computerScore < 5) {
+    // // first up to 5 wins
+    // while (playerScore < 5 && computerScore < 5) {
 
-        // each round computer and player make new choices
-        let computerSelection = computerPlay();
-        let playerSelection = window.prompt("Rock, Paper or Scissors?");
+    //     // each round computer and player make new choices
+    //     let computerSelection = computerPlay();
+    //     let playerSelection = window.prompt("Rock, Paper or Scissors?");
 
-        // play a single round
-        console.log(playRound(playerSelection, computerSelection));
+    //     // play a single round
+    //     console.log(playRound(playerSelection, computerSelection));
 
-        console.log("player: " + playerScore);
-        console.log("computer: " + computerScore);
-    }
+    //     console.log("player: " + playerScore);
+    //     console.log("computer: " + computerScore);
+    // }
 
-    announceWinner();
+    // announceWinner();
 }
 
 // let's play the game!

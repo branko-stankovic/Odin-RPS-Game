@@ -62,5 +62,17 @@ const game = function() {
     // announceWinner();
 }
 
+// Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+
+// grab all the buttons, listen for clicks on each one
+// when clicked, play a round with corresponding choice
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.id, computerPlay()));
+    })
+});
+
 // let's play the game!
 game();

@@ -1,6 +1,14 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const displayPlayerScore = document.querySelector('#displayPlayerScore');
+const displayComputerScore = document.querySelector('#displayComputerScore');
+
+const displayRoundInfo = document.querySelector('#roundInfo');
+const displayGameInfo = document.querySelector('#gameInfo');
+
+const askToPlayAgain = document.querySelector('#playAgain');
+
 // random choice generator for AI
 const computerPlay = function() {
     let moves = ["Rock", "Paper", "Scissors"];
@@ -8,12 +16,6 @@ const computerPlay = function() {
 
     return moves[random];
 }
-
-const displayPlayerScore = document.querySelector('#displayPlayerScore');
-const displayComputerScore = document.querySelector('#displayComputerScore');
-
-const displayRoundInfo = document.querySelector('#roundInfo');
-const displayGameInfo = document.querySelector('#gameInfo');
 
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
@@ -50,6 +52,8 @@ const announceWinner = function() {
     } else if (computerScore > playerScore) {
         displayGameInfo.textContent = "AI wins! Run for your lives!!!";
     }
+
+    askToPlayAgain.classList.toggle('no-show');
 };
 
 // grab all the buttons, listen for clicks on each one

@@ -42,28 +42,6 @@ const announceWinner = function() {
     }
 };
 
-// game machine
-const game = function() {
-
-    // // first up to 5 wins
-    // while (playerScore < 5 && computerScore < 5) {
-
-    //     // each round computer and player make new choices
-    //     let computerSelection = computerPlay();
-    //     let playerSelection = window.prompt("Rock, Paper or Scissors?");
-
-    //     // play a single round
-    //     console.log(playRound(playerSelection, computerSelection));
-
-    //     console.log("player: " + playerScore);
-    //     console.log("computer: " + computerScore);
-    // }
-
-    // announceWinner();
-}
-
-// Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
-
 // grab all the buttons, listen for clicks on each one
 // when clicked, play a round with corresponding choice
 const buttons = document.querySelectorAll('button');
@@ -73,6 +51,3 @@ buttons.forEach((button) => {
         console.log(playRound(button.id, computerPlay()));
     })
 });
-
-// let's play the game!
-game();

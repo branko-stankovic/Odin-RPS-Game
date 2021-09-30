@@ -35,13 +35,14 @@ const playRound = function(playerSelection, computerSelection) {
     }
 
     if (playerScore >= 5 || computerScore >= 5) {
-        announceWinner();
+        gameOver();
     }
 }
 
 const displayGameInfo = document.querySelector('#gameInfo');
+const newGame = document.querySelector('#newGame');
 
-const announceWinner = function() {
+const gameOver = function() {
     if (playerScore > computerScore) {
         displayGameInfo.textContent = "Player wins!!! Go go humans!";
     } else if (computerScore > playerScore) {
@@ -51,6 +52,8 @@ const announceWinner = function() {
     buttons.forEach((button) => {
         button.disabled = true;
     });
+
+    newGame.disabled = false;
 };
 
 // grab all the buttons, listen for clicks on each one
@@ -63,9 +66,8 @@ buttons.forEach((button) => {
     })
 });
 
-const askToPlayAgain = document.querySelector('#playAgain');
 
-askToPlayAgain.addEventListener('click', function() {
+newGame.addEventListener('click', function() {
     playerScore = 0;
     computerScore = 0;
     displayPlayerScore.textContent = playerScore;
@@ -76,4 +78,6 @@ askToPlayAgain.addEventListener('click', function() {
     buttons.forEach((button) => {
         button.disabled = false;
     });
+
+    newGame.disabled = true;
 });

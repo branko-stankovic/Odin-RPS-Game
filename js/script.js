@@ -60,7 +60,7 @@ const gameOver = function() {
         button.disabled = true;
     });
 
-    newGame.disabled = false;
+    newGame.classList.toggle('hidden');
 };
 
 // grab all the buttons, listen for clicks on each one
@@ -91,5 +91,5 @@ newGame.addEventListener('click', function() {
         button.disabled = false;
     });
 
-    newGame.disabled = true;
+    newGame.classList.toggle('hidden');
 });

@@ -6,6 +6,9 @@
 body {
     background: no-repeat center center url(../img/aideal-hwa-OYzbqk2y26c-unsplash.jpg);
     background-size: cover;
+    font-family: monospace;
+    color: white;
+    font-size: 16px;
 }
 
 main {
@@ -20,4 +23,9 @@ main {
 
 .hidden {
     visibility: hidden;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
 }

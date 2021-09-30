@@ -31,7 +31,7 @@ const playRound = function(playerSelection, computerSelection) {
         displayComputerScore.textContent = computerScore;
         displayRoundInfo.textContent = `Computer wins! ${computerSelection} beats ${playerSelection}!`;
     } else if (playerSelection == computerSelection) {
-        displayRoundInfo.textContent = `It's a tie! Both players chose ${playerSelection}`;
+        displayRoundInfo.textContent = `It's a tie! You both chose ${playerSelection}`;
     }
 
     if (playerScore >= 5 || computerScore >= 5) {
@@ -76,7 +76,7 @@ const resetScore = function() {
 
 newGame.addEventListener('click', function() {
     resetScore();
-    
+
     displayRoundInfo.textContent = "";
     displayGameInfo.textContent = "";
 

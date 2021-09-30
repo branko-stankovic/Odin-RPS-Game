@@ -23,13 +23,13 @@ const playRound = function(playerSelection, computerSelection) {
             (playerSelection == "scissors" && computerSelection == "paper")) {
         playerScore++;
         displayPlayerScore.textContent = playerScore;
-        displayRoundInfo.textContent = `Player wins! ${playerSelection} beats ${computerSelection}!`;
+        displayRoundInfo.textContent = `Player wins - ${playerSelection} beats ${computerSelection}!`;
     } else if ((playerSelection == "rock" && computerSelection == "paper") || 
             (playerSelection == "paper" && computerSelection == "scissors") || 
             (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore++;
         displayComputerScore.textContent = computerScore;
-        displayRoundInfo.textContent = `Computer wins! ${computerSelection} beats ${playerSelection}!`;
+        displayRoundInfo.textContent = `Computer wins - ${computerSelection} beats ${playerSelection}!`;
     } else if (playerSelection == computerSelection) {
         displayRoundInfo.textContent = `It's a tie! You both chose ${playerSelection}`;
     }
@@ -84,8 +84,8 @@ const resetScore = function() {
 newGame.addEventListener('click', function() {
     resetScore();
 
-    displayRoundInfo.textContent = "";
-    displayGameInfo.textContent = "";
+    displayRoundInfo.textContent = "It's year 3021. AI has taken over the control over our planet.";
+    displayGameInfo.textContent = "You have been chosen by the humankind to fight one last time, for a chance to save our species.";
 
     buttons.forEach((button) => {
         button.disabled = false;

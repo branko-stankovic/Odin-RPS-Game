@@ -67,11 +67,16 @@ buttons.forEach((button) => {
 });
 
 
-newGame.addEventListener('click', function() {
+const resetScore = function() {
     playerScore = 0;
     computerScore = 0;
     displayPlayerScore.textContent = playerScore;
     displayComputerScore.textContent = computerScore;
+}
+
+newGame.addEventListener('click', function() {
+    resetScore();
+    
     displayRoundInfo.textContent = "";
     displayGameInfo.textContent = "";
 

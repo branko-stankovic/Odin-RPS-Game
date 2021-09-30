@@ -1,26 +1,21 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const displayPlayerScore = document.querySelector('#displayPlayerScore');
-const displayComputerScore = document.querySelector('#displayComputerScore');
-
-const displayRoundInfo = document.querySelector('#roundInfo');
-const displayGameInfo = document.querySelector('#gameInfo');
-
 // random choice generator for AI
 const computerPlay = function() {
-    let moves = ["Rock", "Paper", "Scissors"];
+    let moves = ["rock", "paper", "scissors"];
     let random = Math.floor(Math.random() * 3);
     
     return moves[random];
 }
 
+const displayPlayerScore = document.querySelector('#displayPlayerScore');
+const displayComputerScore = document.querySelector('#displayComputerScore');
+
+const displayRoundInfo = document.querySelector('#roundInfo');
+
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
-
-    // convert both choices to lowercase
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
 
     // handle all the possible outcomes
     if ((playerSelection == "rock" && computerSelection == "scissors") || 
@@ -43,6 +38,8 @@ const playRound = function(playerSelection, computerSelection) {
         announceWinner();
     }
 }
+
+const displayGameInfo = document.querySelector('#gameInfo');
 
 const announceWinner = function() {
     if (playerScore > computerScore) {

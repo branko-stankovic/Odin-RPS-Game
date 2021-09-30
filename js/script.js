@@ -42,11 +42,18 @@ const playRound = function(playerSelection, computerSelection) {
 const displayGameInfo = document.querySelector('#gameInfo');
 const newGame = document.querySelector('#newGame');
 
+const playerWonGameAudio = document.querySelector(".playerWonGame");
+const computerWonGameAudio = document.querySelector(".computerWonGame");
+
 const gameOver = function() {
     if (playerScore > computerScore) {
         displayGameInfo.textContent = "Player wins!!! Go go humans!";
+        playerWonGameAudio.currentTime = 0;
+        playerWonGameAudio.play();
     } else if (computerScore > playerScore) {
         displayGameInfo.textContent = "AI wins! Run for your lives!!!";
+        computerWonGameAudio.currentTime = 0;
+        computerWonGameAudio.play();
     }
 
     buttons.forEach((button) => {

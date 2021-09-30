@@ -2,3 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: grey;
+    background: url(../img/aideal-hwa-OYzbqk2y26c-unsplash.jpg) center;
+}

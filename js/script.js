@@ -7,13 +7,11 @@ const displayComputerScore = document.querySelector('#displayComputerScore');
 const displayRoundInfo = document.querySelector('#roundInfo');
 const displayGameInfo = document.querySelector('#gameInfo');
 
-const askToPlayAgain = document.querySelector('#playAgain');
-
 // random choice generator for AI
 const computerPlay = function() {
     let moves = ["Rock", "Paper", "Scissors"];
     let random = Math.floor(Math.random() * 3);
-
+    
     return moves[random];
 }
 
@@ -41,7 +39,7 @@ const playRound = function(playerSelection, computerSelection) {
         displayRoundInfo.textContent = `It's a tie! Both players chose ${playerSelection}`;
     }
 
-    if (playerScore == 5 || computerScore == 5) {
+    if (playerScore >= 5 || computerScore >= 5) {
         announceWinner();
     }
 }
@@ -53,15 +51,32 @@ const announceWinner = function() {
         displayGameInfo.textContent = "AI wins! Run for your lives!!!";
     }
 
-    askToPlayAgain.classList.toggle('no-show');
+    buttons.forEach((button) => {
+        button.disabled = true;
+    });
 };
 
 // grab all the buttons, listen for clicks on each one
 // when clicked, play a round with corresponding choice
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.playerChoice');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(playRound(button.id, computerPlay()));
+        (playRound(button.id, computerPlay()));
     })
+});
+
+const askToPlayAgain = document.querySelector('#playAgain');
+
+askToPlayAgain.addEventListener('click', function() {
+    playerScore = 0;
+    computerScore = 0;
+    displayPlayerScore.textContent = playerScore;
+    displayComputerScore.textContent = computerScore;
+    displayRoundInfo.textContent = "";
+    displayGameInfo.textContent = "";
+
+    buttons.forEach((button) => {
+        button.disabled = false;
+    });
 });

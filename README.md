@@ -1,3 +1,5 @@
 CREDITS:
 
-#1 Photo by Aideal Hwa on Unsplash
+- [Photo by Taylor Vick on Unsplash](https://unsplash.com/photos/M5tzZtFCOfs)
+
+- [Audio by Kenney ](https://www.kenney.nl/)

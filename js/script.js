@@ -52,11 +52,11 @@ const computerWonGameAudio = document.querySelector(".computerWonGame");
 
 const gameOver = function() {
     if (playerScore > computerScore) {
-        displayRoundInfo.textContent += " Player wins!!! Go go humans!";
+        displayRoundInfo.innerHTML = "<strong>You win!!! The computers are starting to shut down!</strong>";
         playerWonGameAudio.currentTime = 0;
         playerWonGameAudio.play();
     } else if (computerScore > playerScore) {
-        displayRoundInfo.textContent += " AI wins! Run for your lives!!!";
+        displayRoundInfo.innerHTML = "<strong>AI wins! Its algorithm is too strong!!!</strong>";
         computerWonGameAudio.currentTime = 0;
         computerWonGameAudio.play();
     }

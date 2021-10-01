@@ -47,20 +47,24 @@ h1 {
 }
 
 .displayScore {
-    font-size: 2.8em;
+    font-size: 2.4rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 button {
     padding: 3px;
+    min-width: 4rem;
 }
 
 #roundInfo {
     font-size: 1.2em;
+    text-align: center;
 }
 
 #gameInfo {
     text-align: center;
     font-size: 1.4em;
+    font-size: clamp(1rem, 3vw, 1.4rem);
     font-style: italic;
     color: rgb(11, 204, 11);
 }

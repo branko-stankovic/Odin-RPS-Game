@@ -15,6 +15,11 @@ const displayComputerScore = document.querySelector('#displayComputerScore');
 const displayRoundInfo = document.querySelector('#roundInfo');
 const playerChoices = document.querySelector('.playerChoices');
 
+const updateDisplayScore = function() {
+    displayPlayerScore.textContent = playerScore;
+    displayComputerScore.textContent = computerScore;
+}
+
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
 
@@ -23,13 +28,13 @@ const playRound = function(playerSelection, computerSelection) {
             (playerSelection == "paper" && computerSelection == "rock") || 
             (playerSelection == "scissors" && computerSelection == "paper")) {
         playerScore++;
-        displayPlayerScore.textContent = playerScore;
+        updateDisplayScore();
         displayRoundInfo.textContent = `Player wins - ${playerSelection} beats ${computerSelection}!`;
     } else if ((playerSelection == "rock" && computerSelection == "paper") || 
             (playerSelection == "paper" && computerSelection == "scissors") || 
             (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore++;
-        displayComputerScore.textContent = computerScore;
+        updateDisplayScore();
         displayRoundInfo.textContent = `Computer wins - ${computerSelection} beats ${playerSelection}!`;
     } else if (playerSelection == computerSelection) {
         displayRoundInfo.textContent = `It's a tie! You both chose ${playerSelection}`;
@@ -78,8 +83,7 @@ buttons.forEach((button) => {
 const resetScore = function() {
     playerScore = 0;
     computerScore = 0;
-    displayPlayerScore.textContent = playerScore;
-    displayComputerScore.textContent = computerScore;
+    updateDisplayScore();
 }
 
 newGame.addEventListener('click', function() {

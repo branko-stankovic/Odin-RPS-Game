@@ -13,6 +13,7 @@ const displayPlayerScore = document.querySelector('#displayPlayerScore');
 const displayComputerScore = document.querySelector('#displayComputerScore');
 
 const displayRoundInfo = document.querySelector('#roundInfo');
+const playerChoices = document.querySelector('.playerChoices');
 
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
@@ -45,8 +46,6 @@ const newGame = document.querySelector('#newGame');
 const playerWonGameAudio = document.querySelector(".playerWonGame");
 const computerWonGameAudio = document.querySelector(".computerWonGame");
 
-const playerMenu = document.querySelector('.playerMenu');
-
 const gameOver = function() {
     if (playerScore > computerScore) {
         displayRoundInfo.textContent += " Player wins!!! Go go humans!";
@@ -63,7 +62,7 @@ const gameOver = function() {
     });
 
     newGame.classList.toggle('hidden');
-    playerMenu.classList.toggle('hidden');
+    playerChoices.classList.toggle('hidden');
 };
 
 // grab all the buttons, listen for clicks on each one
@@ -95,5 +94,5 @@ newGame.addEventListener('click', function() {
     });
 
     newGame.classList.toggle('hidden');
-    playerMenu.classList.toggle('hidden');
+    playerChoices.classList.toggle('hidden');
 });

@@ -12,13 +12,13 @@ const computerPlay = function() {
 const displayPlayerScore = document.querySelector('#displayPlayerScore');
 const displayComputerScore = document.querySelector('#displayComputerScore');
 
-const displayRoundInfo = document.querySelector('#roundInfo');
-const playerMenu = document.querySelector('.playerMenu');
-
 const updateDisplayScore = function() {
     displayPlayerScore.textContent = playerScore;
     displayComputerScore.textContent = computerScore;
 }
+
+const displayRoundInfo = document.querySelector('#roundInfo');
+const playerMenu = document.querySelector('.playerMenu');
 
 // play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {

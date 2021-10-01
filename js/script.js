@@ -13,7 +13,7 @@ const displayPlayerScore = document.querySelector('#displayPlayerScore');
 const displayComputerScore = document.querySelector('#displayComputerScore');
 
 const displayRoundInfo = document.querySelector('#roundInfo');
-const playerChoices = document.querySelector('.playerChoices');
+const playerMenu = document.querySelector('.playerMenu');
 
 const updateDisplayScore = function() {
     displayPlayerScore.textContent = playerScore;
@@ -66,7 +66,7 @@ const gameOver = function() {
     });
 
     newGame.classList.toggle('hidden');
-    playerChoices.classList.toggle('hidden');
+    playerMenu.classList.toggle('hidden');
 };
 
 // grab all the buttons, listen for clicks on each one
@@ -96,5 +96,5 @@ newGame.addEventListener('click', function() {
     });
 
     newGame.classList.toggle('hidden');
-    playerChoices.classList.toggle('hidden');
+    playerMenu.classList.toggle('hidden');
 });

@@ -56,6 +56,10 @@ button {
     min-width: 4rem;
 }
 
+button:active {
+    transform: scale(1.05);
+}
+
 #roundInfo {
     font-size: 1.2em;
     text-align: center;

@@ -45,7 +45,7 @@ const newGame = document.querySelector('#newGame');
 const playerWonGameAudio = document.querySelector(".playerWonGame");
 const computerWonGameAudio = document.querySelector(".computerWonGame");
 
-const playerChoices = document.querySelector('.playerChoices');
+const playerMenu = document.querySelector('.playerMenu');
 
 const gameOver = function() {
     if (playerScore > computerScore) {
@@ -63,7 +63,7 @@ const gameOver = function() {
     });
 
     newGame.classList.toggle('hidden');
-    playerChoices.classList.toggle('hidden');
+    playerMenu.classList.toggle('hidden');
 };
 
 // grab all the buttons, listen for clicks on each one
@@ -88,12 +88,12 @@ newGame.addEventListener('click', function() {
     resetScore();
 
     displayRoundInfo.textContent = "First up to 5 wins!";
-    displayGameInfo.innerHTML = "It's year 3021. AI has taken over the control over our planet.<br><br>You have been chosen by the humankind to fight one last time, for a chance to save our species.";
+    displayGameInfo.innerHTML = "It's the year 3021. AI has taken over the control over our planet.<br><br>You have been chosen by the humankind to fight one last time, for a chance to save our species.";
 
     buttons.forEach((button) => {
         button.disabled = false;
     });
 
     newGame.classList.toggle('hidden');
-    playerChoices.classList.toggle('hidden');
+    playerMenu.classList.toggle('hidden');
 });

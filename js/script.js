@@ -40,7 +40,6 @@ const playRound = function(playerSelection, computerSelection) {
     }
 }
 
-const displayGameInfo = document.querySelector('#gameInfo');
 const newGame = document.querySelector('#newGame');
 
 const playerWonGameAudio = document.querySelector(".playerWonGame");
@@ -87,7 +86,6 @@ newGame.addEventListener('click', function() {
     resetScore();
 
     displayRoundInfo.textContent = "First up to 5 wins!";
-    displayGameInfo.innerHTML = "It's the year 3021. AI has taken over the control over our planet.<br><br>You have been chosen by the humankind to fight one last time, for a chance to save our species.";
 
     buttons.forEach((button) => {
         button.disabled = false;

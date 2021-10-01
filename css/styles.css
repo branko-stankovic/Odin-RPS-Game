@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background: no-repeat center center url(../img/aideal-hwa-OYzbqk2y26c-unsplash.jpg);
+    background: no-repeat center center url(../img/taylor-vick-M5tzZtFCOfs-unsplash.jpg);
     background-size: cover;
-    font-family: monospace;
+    font-family: "Share Tech Mono", monospace;
     color: white;
     font-size: 16px;
 }
 
 main {
-    max-width: 1500px;
+    max-width: 1300px;
     margin: 0 auto;
+    padding: 0 8%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,11 +24,43 @@ main {
     align-items: center;
 }
 
+main::before
+{
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+}
+
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 
 h1 {
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 2.4em;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.displayScore {
+    font-size: 2.8em;
+}
+
+button {
+    padding: 3px;
+}
+
+#roundInfo {
+    font-size: 1.2em;
+}
+
+#gameInfo {
+    text-align: center;
+    font-size: 1.4em;
+    font-style: italic;
+    color: rgb(11, 204, 11);
 }

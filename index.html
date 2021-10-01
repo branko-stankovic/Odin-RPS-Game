@@ -9,17 +9,16 @@
 </head>
 <body>
     <main>
-        <h1>Rock-Paper-Scissors Game</h1>
-        <p>Player <span id="displayPlayerScore">0</span> : <span id="displayComputerScore">0</span> Computer</p>
-        <div>
+        <h1>Humans vs AI</h1>
+        <p class="displayScore">Player <span id="displayPlayerScore">0</span> :<wbr> <span id="displayComputerScore">0</span> Computer</p>
+        <div class="playerChoices">
             <button id="rock" class="playerChoice">Rock</button>
             <button id="paper" class="playerChoice">Paper</button>
             <button id="scissors" class="playerChoice">Scissors</button>
         </div>
-        <p id="roundInfo">It's year 3021. AI has taken over the control over our planet.</p>
-        <p id="gameInfo">You have been chosen by the humankind to fight one last time, for a chance to save our species.</p>
-        <p>First up to 5 wins!</p>
         <button id="newGame" class="hidden">Play Again ?</button>
+        <p id="roundInfo">First up to 5 wins!</p>
+        <p id="gameInfo">It's the year 3021. AI has taken over the control over our planet.<br><br>You have been chosen by the humankind to fight one last time, for a chance to save our species.</p>
     </main>
     <audio class="playerWonGame" src="/audio/jingles_SAX10.ogg"></audio>
     <audio class="computerWonGame" src="/audio/jingles_SAX07.ogg"></audio>

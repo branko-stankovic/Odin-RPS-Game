@@ -45,13 +45,15 @@ const newGame = document.querySelector('#newGame');
 const playerWonGameAudio = document.querySelector(".playerWonGame");
 const computerWonGameAudio = document.querySelector(".computerWonGame");
 
+const playerChoices = document.querySelector('.playerChoices');
+
 const gameOver = function() {
     if (playerScore > computerScore) {
-        displayGameInfo.textContent = "Player wins!!! Go go humans!";
+        displayRoundInfo.textContent += " Player wins!!! Go go humans!";
         playerWonGameAudio.currentTime = 0;
         playerWonGameAudio.play();
     } else if (computerScore > playerScore) {
-        displayGameInfo.textContent = "AI wins! Run for your lives!!!";
+        displayRoundInfo.textContent += " AI wins! Run for your lives!!!";
         computerWonGameAudio.currentTime = 0;
         computerWonGameAudio.play();
     }
@@ -61,6 +63,7 @@ const gameOver = function() {
     });
 
     newGame.classList.toggle('hidden');
+    playerChoices.classList.toggle('hidden');
 };
 
 // grab all the buttons, listen for clicks on each one
@@ -84,12 +87,13 @@ const resetScore = function() {
 newGame.addEventListener('click', function() {
     resetScore();
 
-    displayRoundInfo.textContent = "It's year 3021. AI has taken over the control over our planet.";
-    displayGameInfo.textContent = "You have been chosen by the humankind to fight one last time, for a chance to save our species.";
+    displayRoundInfo.textContent = "First up to 5 wins!";
+    displayGameInfo.innerHTML = "It's year 3021. AI has taken over the control over our planet.<br><br>You have been chosen by the humankind to fight one last time, for a chance to save our species.";
 
     buttons.forEach((button) => {
         button.disabled = false;
     });
 
     newGame.classList.toggle('hidden');
+    playerChoices.classList.toggle('hidden');
 });

@@ -61,10 +61,6 @@ const gameOver = function() {
         computerWonGameAudio.play();
     }
 
-    buttons.forEach((button) => {
-        button.disabled = true;
-    });
-
     newGame.classList.toggle('hidden');
     playerMenu.classList.toggle('hidden');
 };
@@ -90,10 +86,6 @@ newGame.addEventListener('click', function() {
     resetScore();
 
     displayRoundInfo.textContent = "First up to 5 wins!";
-
-    buttons.forEach((button) => {
-        button.disabled = false;
-    });
 
     newGame.classList.toggle('hidden');
     playerMenu.classList.toggle('hidden');

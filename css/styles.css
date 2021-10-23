@@ -6,6 +6,7 @@
 }
 
 body {
+    background-color: darkgreen;
     background: no-repeat center center url(../img/taylor-vick-M5tzZtFCOfs-unsplash.jpg);
     background-size: cover;
     font-family: "Share Tech Mono", monospace;

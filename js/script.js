@@ -1,7 +1,17 @@
+const displayPlayerScore = document.querySelector('#displayPlayerScore');
+const displayComputerScore = document.querySelector('#displayComputerScore');
+
+const displayRoundInfo = document.querySelector('#roundInfo');
+const playerMenu = document.querySelector('.playerMenu');
+const buttons = document.querySelectorAll('.playerChoice');
+const newGame = document.querySelector('#newGame');
+
+const playerWonGameAudio = document.querySelector(".playerWonGame");
+const computerWonGameAudio = document.querySelector(".computerWonGame");
+
 let playerScore = 0;
 let computerScore = 0;
 
-// random choice generator for AI
 const computerPlay = function() {
     let moves = ["rock", "paper", "scissors"];
     let random = Math.floor(Math.random() * 3);
@@ -9,21 +19,12 @@ const computerPlay = function() {
     return moves[random];
 }
 
-const displayPlayerScore = document.querySelector('#displayPlayerScore');
-const displayComputerScore = document.querySelector('#displayComputerScore');
-
 const updateDisplayScore = function() {
     displayPlayerScore.textContent = playerScore;
     displayComputerScore.textContent = computerScore;
 }
 
-const displayRoundInfo = document.querySelector('#roundInfo');
-const playerMenu = document.querySelector('.playerMenu');
-
-// play a single round of rock paper scissors
 const playRound = function(playerSelection, computerSelection) {
-
-    // handle all the possible outcomes
     if ((playerSelection == "rock" && computerSelection == "scissors") || 
             (playerSelection == "paper" && computerSelection == "rock") || 
             (playerSelection == "scissors" && computerSelection == "paper")) {
@@ -45,14 +46,9 @@ const playRound = function(playerSelection, computerSelection) {
     }
 }
 
-const newGame = document.querySelector('#newGame');
-
-const playerWonGameAudio = document.querySelector(".playerWonGame");
-const computerWonGameAudio = document.querySelector(".computerWonGame");
-
 const gameOver = function() {
     if (playerScore > computerScore) {
-        displayRoundInfo.innerHTML = "<strong>You win!!! The computers are starting to shut down!</strong>";
+        displayRoundInfo.innerHTML = "<strong>You win!!! The mainframe is starting to shut down!</strong>";
         playerWonGameAudio.currentTime = 0;
         playerWonGameAudio.play();
     } else if (computerScore > playerScore) {
@@ -65,16 +61,12 @@ const gameOver = function() {
     playerMenu.classList.toggle('hidden');
 };
 
-// grab all the buttons, listen for clicks on each one
-// when clicked, play a round with corresponding choice
-const buttons = document.querySelectorAll('.playerChoice');
-
+// ROCK, PAPER, SCISSORS
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         (playRound(button.id, computerPlay()));
     })
 });
-
 
 const resetScore = function() {
     playerScore = 0;

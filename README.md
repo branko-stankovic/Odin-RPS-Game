@@ -10,6 +10,7 @@ A classic game of Rock-Paper-Scissors against the evil machine (Math.random()). 
 [https://branko-stankovic.github.io/odin-rps-game/](https://branko-stankovic.github.io/odin-rps-game/)
 
 ## Preview:
+![a preview of the game](/img/preview.png)
 
 ## Credits: 
 - Background image by [Taylor Vick on Unsplash](https://unsplash.com/photos/M5tzZtFCOfs)

@@ -1,4 +1,5 @@
 # Project: Rock-Paper-Scissors
+Done as a part of the [TheOdinProject](https://www.theodinproject.com/) curriculum.
 
 A classic game of Rock-Paper-Scissors against the evil machine (Math.random()). Be the first one to win 5 rounds against the most powerful AI in the universe! ✊✋:v:
 
